@@ -1,1 +1,43 @@
-/** */
+
+
+.form, .field {
+    display: flex;
+    flex-direction: column;
+    gap:2rem
+}
+
+.form input[type="text"],
+.form select
+{
+    padding: 1rem;
+    background-color: transparent;
+    border: .3rem solid var(--white);
+    color:var(--white);
+    font-size: 1.8rem;
+    font-weight: 400;
+    border-radius: 1rem;
+}
+
+.field ::placeholder{
+    color:var(--white);
+}
+
+.form select option {
+    background-color: var(--dark-gray, #333); /* Cambia el fondo para que sea legible */
+    color: rgb(177, 171, 171); /* O el color que prefieras para la lista */
+    font-size: 1.4rem; /* Un tamaño un poco más pequeño para la lista */
+    padding: 0; /* Las opciones no aceptan padding en todos los navegadores */
+}
+
+.submit{
+    background-color: var(--primary);
+    border: none;
+    color:var(--);
+    font-weight: 700;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 1rem;
+    
+
+}
