@@ -1,11 +1,14 @@
 import style from "./App.module.css"
+import Alert from "./components/Alert/Alert"
 import Form from "./components/Form/Form"
+import Spinner from "./components/Spinner/Spinner"
+
 import WeatherDetail from "./components/WeatherDetail/WeatherDetail"
 import useWheather from "./Hooks/useWheather"
 
 function App() {
   
-  const {weather,feachWeather, hasWeatherData}=useWheather()
+  const {weather,loading,notFound,feachWeather, hasWeatherData}=useWheather()
 
   
 
@@ -16,11 +19,13 @@ function App() {
       <Form
         fetchWeather={feachWeather}
       />
+      {loading && <Spinner/>}
       {hasWeatherData &&
         <WeatherDetail
             weather={weather}
         />
       }
+      {notFound && <Alert>Ciudad No en contrada</Alert>}
      
      </div>
     </>
